@@ -1,2 +1,2 @@
-# Anket
+# anket
 Poll project
