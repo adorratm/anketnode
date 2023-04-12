@@ -1,7 +1,7 @@
 {
-  "name": "rentacar",
+  "name": "anket",
   "version": "1.0.0",
-  "description": "Rent a car project",
+  "description": "Poll project",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adorratm/rentacar.git"
+    "url": "git+https://github.com/adorratm/anket.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/adorratm/rentacar/issues"
+    "url": "https://github.com/adorratm/anket/issues"
   },
-  "homepage": "https://github.com/adorratm/rentacar#readme",
+  "homepage": "https://github.com/adorratm/anket#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
