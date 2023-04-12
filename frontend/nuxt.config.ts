@@ -11,7 +11,7 @@ export default defineNuxtConfig({
                     "charset": "utf-8"
                 }
             ],
-            "title": "Adorratm Rent a Car",
+            "title": "Anket",
             "link": [],
             "style": [],
             "script": [],

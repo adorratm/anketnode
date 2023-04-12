@@ -9,12 +9,12 @@
 
 <script setup lang="ts">
 useHead({
-  title: "Adorratm Rent a Car",
+  title: "Anket - Mutfak Yapım Dijital Reklam Ajansı",
   meta: [
     {
       name: "description",
       content:
-        "Adorratm Rent a car project on github. https://github.com/adorratm",
+        "Anket - Mutfak Yapım Dijital Reklam Ajansı",
     },
     {
       name: "author",
