@@ -4,7 +4,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 useHead({
   title: "Anket - Mutfak Yapım Dijital Reklam Ajansı",
   meta: [

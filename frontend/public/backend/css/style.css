@@ -93,11 +93,6 @@ Project:	pinkman
 /****************************/
 /** Imports **/
 /****************************/
-@import url(../../vendor/plugins/bootstrap/dist/css/bootstrap.min.css);
-@import url(../../vendor/plugins/mdb/css/mdb.min.css);
-@import url(all.min.css);
-@import url(v4-shims.min.css);
-@import url(animate.css);
 
 /*__________________________________________________________________;
 [Mixin]
@@ -20217,6 +20212,18 @@ Project:	pinkman
     margin-left: 0;
   }
 
+  .hk-wrapper.hk-vertical-nav.hk-nav-toggle .hk-nav .navbar-nav .nav-item .nav-link::after{
+    display:inline-block;
+  }
+
+  .hk-wrapper.hk-vertical-nav.hk-nav-toggle .navbar-nav .nav-item .nav-link.link-with-badge::after{
+    display: none;
+  }
+
+  .hk-wrapper.hk-vertical-nav.hk-nav-toggle .navbar-nav .nav-item .nav-link.link-with-badge .badge{
+    display: inline-block;
+  }
+
   .hk-wrapper.hk-vertical-nav.hk-nav-toggle .hk-nav {
     width: 240px;
     left: 0;
@@ -30054,5 +30061,3 @@ table.dataTable>tbody>tr.child span.dtr-data {
 
   /* IE11 */
 }
-
-/*# sourceMappingURL=style.css.map */

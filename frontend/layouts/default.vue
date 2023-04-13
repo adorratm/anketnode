@@ -1507,14 +1507,13 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 useHead({
   title: "Anket - Mutfak Yapım Dijital Reklam Ajansı",
   meta: [
     {
       name: "description",
-      content:
-        "Anket - Mutfak Yapım Dijital Reklam Ajansı",
+      content: "Anket - Mutfak Yapım Dijital Reklam Ajansı",
     },
     {
       name: "author",
@@ -1535,9 +1534,13 @@ useHead({
     },
   ],
   script: [
-    { src: "/frontend/js/vendors.js", defer: true, body: true },
-    { src: "/frontend/js/scrollmagic.min.js", defer: true, body: true },
-    { src: "/frontend/js/main.js", defer: true, body: true },
+    { src: "/frontend/js/vendors.js", defer: true, tagPosition: "bodyClose" },
+    {
+      src: "/frontend/js/scrollmagic.min.js",
+      defer: true,
+      tagPosition: "bodyClose",
+    },
+    { src: "/frontend/js/main.js", defer: true, tagPosition: "bodyClose" },
   ],
 });
 </script>
