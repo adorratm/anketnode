@@ -2,7 +2,7 @@
   <div>
     <!-- Vertical Nav -->
     <nav class="hk-nav hk-nav-light">
-      <a href="javascript:void(0);" id="hk_nav_close" class="hk-nav-close"
+      <a id="hk_nav_close" href="javascript:void(0);" class="hk-nav-close"
         ><span class="feather-icon"><i class="fa fa-times"></i></span
       ></a>
       <div class="nicescroll-bar">

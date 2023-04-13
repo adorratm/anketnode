@@ -35,9 +35,9 @@
     </div>
 
     <main>
-      <FrontendHeader />
-      <slot />
-      <FrontendFooter />
+      <FrontendHeaderComponent />
+      <nuxt />
+      <FrontendFooterComponent />
     </main>
 
     <div
@@ -1507,40 +1507,42 @@
   </div>
 </template>
 
-<script setup>
-useHead({
-  title: "Anket - Mutfak Yapım Dijital Reklam Ajansı",
-  meta: [
-    {
-      name: "description",
-      content: "Anket - Mutfak Yapım Dijital Reklam Ajansı",
+<script>
+export default {
+  head: {
+    titleTemplate: '%s - Anket',
+    meta: [
+      {
+        name: 'description',
+        content: 'Anket - Mutfak Yapım Dijital Reklam Ajansı',
+      },
+      {
+        name: 'author',
+        content: 'Adorratm https://github.com/adorratm',
+      },
+    ],
+    htmlAttrs: {
+      lang: 'tr',
     },
-    {
-      name: "author",
-      content: "Adorratm https://github.com/adorratm",
-    },
-  ],
-  htmlAttrs: {
-    lang: "tr",
+    link: [
+      {
+        rel: 'stylesheet',
+        href: '/frontend/css/vendors.css',
+      },
+      {
+        rel: 'stylesheet',
+        href: '/frontend/css/main.css',
+      },
+    ],
+    script: [
+      { src: '/frontend/js/vendors.js', defer: true, tagPosition: 'bodyClose' },
+      {
+        src: '/frontend/js/scrollmagic.min.js',
+        defer: true,
+        tagPosition: 'bodyClose',
+      },
+      { src: '/frontend/js/main.js', defer: true, tagPosition: 'bodyClose' },
+    ],
   },
-  link: [
-    {
-      rel: "stylesheet",
-      href: "/frontend/css/vendors.css",
-    },
-    {
-      rel: "stylesheet",
-      href: "/frontend/css/main.css",
-    },
-  ],
-  script: [
-    { src: "/frontend/js/vendors.js", defer: true, tagPosition: "bodyClose" },
-    {
-      src: "/frontend/js/scrollmagic.min.js",
-      defer: true,
-      tagPosition: "bodyClose",
-    },
-    { src: "/frontend/js/main.js", defer: true, tagPosition: "bodyClose" },
-  ],
-});
+}
 </script>

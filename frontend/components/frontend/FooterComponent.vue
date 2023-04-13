@@ -132,14 +132,8 @@
   </div>
 </template>
     
-<script lang="ts">
+<script>
 export default {
-  name: "Footer",
-  layout: "default",
-  data() {
-    return {
-      message: "Hello World!",
-    };
-  },
+  name: "FooterComponent",
 };
 </script>

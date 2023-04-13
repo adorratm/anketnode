@@ -4,6 +4,6 @@
 
 <script>
 export default {
-  layout: 'admin_layout',
-}
+  name: "FooterComponent",
+};
 </script>

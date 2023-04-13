@@ -1024,9 +1024,8 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 export default {
-  name: "Index",
-  layout: "default",
+  name: "HeaderComponent",
 };
 </script>

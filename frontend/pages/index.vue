@@ -10090,8 +10090,8 @@
   </div>
 </template>
 
-<script lang="ts">
-definePageMeta({
-  layout: "default",
-});
+<script>
+export default {
+  layout: 'default',
+}
 </script>
