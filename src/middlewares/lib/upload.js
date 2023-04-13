@@ -5,13 +5,13 @@
  */
 
 // Importing the multer
-const multer = require('multer');
+import multer from 'multer';
 
 // Importing the path
-const path = require('path');
+import path from 'path';
 
 // Importing the fs
-const fs = require('fs');
+import fs from 'fs';
 
 // File filter
 const fileFilter = (req, file, cb) => {
@@ -67,4 +67,4 @@ const storage = multer.diskStorage({
 const upload = multer({ storage, fileFilter }).array("images");
 
 // Exporting the upload middleware
-module.exports = upload;
+export default upload;

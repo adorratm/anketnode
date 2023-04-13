@@ -5,27 +5,28 @@
  */
 
 // Importing the express router
-const router = require('express').Router();
+import express from 'express';
+const router = express.Router();
 
 // Importing the multer
-const multer = require('multer');
+import multer from 'multer';
 
 // Importing the auth routes
-const auth = require('./auth.routes');
+import auth from './auth.routes.js';
 
 // Importing the upload middleware
-const upload = require('../middlewares/lib/upload');
-const APIError = require('../utils/errors');
-const Response = require('../utils/response');
+import upload from '../middlewares/lib/upload.js';
+import APIError from '../utils/errors.js';
+import Response from '../utils/response.js';
 
 // Importing the path
-const path = require('path');
+import path from 'path';
 
 // Importing the sharp
-const sharp = require('sharp');
+import sharp from 'sharp';
 
 // Importing the fs
-const fs = require('fs');
+import fs from 'fs';
 
 // Using the auth routes
 router.use(auth);
@@ -66,4 +67,4 @@ router.post('/upload', async (req, res) => {
 });
 
 // Exporting the routes
-module.exports = router;
+export default router;

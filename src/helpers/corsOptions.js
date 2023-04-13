@@ -28,4 +28,4 @@ const corsOptions = (req, callback) => {
 }
 
 // Exporting the module
-module.exports = corsOptions;
+export default corsOptions;

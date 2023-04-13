@@ -5,10 +5,10 @@
  */
 
 // Importing Joi
-const joi = require('joi');
+import joi from 'joi';
 
 // APIError
-const APIError = require('../../utils/errors');
+import APIError from '../../utils/errors.js';
 
 // Class for the auth validation
 class authValidation {
@@ -89,4 +89,4 @@ class authValidation {
 }
 
 // Exporting the auth validation
-module.exports = authValidation;
+export default authValidation;

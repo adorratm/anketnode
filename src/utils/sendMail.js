@@ -5,7 +5,7 @@
  */
 
 // Importing the nodemailer module
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
 
 // Defining the function to send email
 const sendEmail = async (mailOptions) => {
@@ -31,4 +31,4 @@ const sendEmail = async (mailOptions) => {
 }
 
 // Exporting the function
-module.exports = sendEmail;
+export default sendEmail;

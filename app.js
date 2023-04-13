@@ -4,56 +4,58 @@
  * @author https://github.com/adorratm
  */
 
+// Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
+import "dotenv/config.js";
+
 // Express Async Errors is a middleware that wraps the route handlers and makes sure any errors they throw are passed to the express error handler.
-require("express-async-errors");
+import "express-async-errors";
 
 // Express
-const express = require('express');
+import express from "express";
 
 // Express App
 const app = express();
 
-// Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
-require('dotenv').config();
-
 // DB Connection 
-require('./src/db/dbConnection');
+import "./src/db/dbConnection.js";
 
 // Port
 const port = process.env.PORT || 5000;
 
 // Routers
-const router = require('./src/routers');
+import router from "./src/routers/index.js";
 
 // Error Handler
-const errorHandlerMiddleware = require('./src/middlewares/errorHandler');
+import errorHandlerMiddleware from "./src/middlewares/errorHandler.js";
 
 // Cors
-const cors = require('cors');
+import cors from "cors";
 
 // Cors Options
-const corsOptions = require('./src/helpers/corsOptions');
+import corsOptions from "./src/helpers/corsOptions.js";
 
 // Express Mongo Sanitize
-const mongoSanitize = require('express-mongo-sanitize');
+import mongoSanitize from "express-mongo-sanitize";
 
 // Helmet
-const helmet = require('helmet');
+import helmet from "helmet";
 
 // Hpp
-const hpp = require('hpp');
+import hpp from "hpp";
 
 // Api Rate Limiter
-const apiLimiter = require("./src/middlewares/rateLimit");
+import apiLimiter from "./src/middlewares/rateLimit.js";
 
 // Moment
-const moment = require('moment-timezone');
+import moment from "moment-timezone";
 
 // Set default timezone
 moment.tz.setDefault("Europe/Istanbul");
 
 // Path
-const path = require('path');
+import path from "path";
+
+const __dirname = path.dirname("/public");
 
 // Middlewares
 app.use(express.json());

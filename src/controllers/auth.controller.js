@@ -5,26 +5,26 @@
  */
 
 // Importing the user model
-const user = require('../models/user.model');
+import user from '../models/user.model.js';
 
 // Importing bcrypt
-const bcrypt = require('bcrypt');
+import bcrypt from 'bcrypt';
 
 // Importing the APIError
-const APIError = require('../utils/errors');
+import APIError from '../utils/errors.js';
 
 // Importing the Response
-const Response = require('../utils/response');
+import Response from '../utils/response.js';
 
 // Importing the auth middleware
-const { createToken, createTemporaryToken, decodedTemporaryToken } = require('../middlewares/auth');
+import { createToken, createTemporaryToken, decodedTemporaryToken } from '../middlewares/auth.js';
 
 // Importing the crypto module
-const crypto = require("crypto");
+import crypto from 'crypto';
 
 // Importing the sendMail function
-const sendEmail = require('../utils/sendMail');
-const moment = require('moment/moment');
+import sendEmail from '../utils/sendMail.js';
+import moment from 'moment';
 
 // Login Method
 const login = async (req, res) => {
@@ -170,4 +170,4 @@ const resetPassword = async (req, res) => {
 }
 
 // Exporting the methods
-module.exports = { login, register, me, forgotPassword, resetCodeCheck, resetPassword }
+export { login, register, me, forgotPassword, resetCodeCheck, resetPassword }

@@ -5,7 +5,7 @@
  */
 
 // Importing the rate limit
-const rateLimit = require('express-rate-limit');
+import rateLimit from 'express-rate-limit';
 
 // Creating the allowed list
 const allowedList = ['::1'];
@@ -33,4 +33,4 @@ const apiLimiter = rateLimit({
 });
 
 // Exporting the rate limit
-module.exports = apiLimiter;
+export default apiLimiter;

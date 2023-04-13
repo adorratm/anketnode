@@ -5,13 +5,13 @@
  */
 
 // Importing the jwt
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 
 // Importing the user model
-const user = require('../models/user.model');
+import user from '../models/user.model.js';
 
 // Importing the APIError
-const APIError = require('../utils/errors');
+import APIError from '../utils/errors.js';
 
 // Creating the token
 const createToken = async (user, res) => {
@@ -121,9 +121,4 @@ const decodedTemporaryToken = async (temporaryToken) => {
 }
 
 // Exporting the module
-module.exports = {
-    createToken,
-    createTemporaryToken,
-    tokenCheck,
-    decodedTemporaryToken
-}
+export { createToken, tokenCheck, createTemporaryToken,  decodedTemporaryToken }

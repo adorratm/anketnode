@@ -5,7 +5,7 @@
  */
 
 // Importing the mongoose
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 // Connecting to the MongoDB
 mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {

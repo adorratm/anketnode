@@ -5,7 +5,7 @@
  */
 
 // Importing the APIError
-const APIError = require('../utils/errors');
+import APIError from '../utils/errors.js';
 
 // Error Handler Middleware
 const errorHandlerMiddleware = (err, req, res, next) => {
@@ -14,11 +14,11 @@ const errorHandlerMiddleware = (err, req, res, next) => {
         return res.status(err.statusCode || 400).send({ success: false, message: err.message });
     }
 
-    
+
 
     // If the error is not an instance of APIError, convert it.
     return res.status(500).send({ success: false, message: err.message });
 }
 
 // Exporting the middleware
-module.exports = errorHandlerMiddleware;
+export default errorHandlerMiddleware;

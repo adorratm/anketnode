@@ -5,16 +5,17 @@
  */
 
 // Importing the express router
-const router = require('express').Router();
+import express from 'express';
+const router = express.Router();
 
 // Importing the auth controller
-const { login, register, me, forgotPassword, resetCodeCheck, resetPassword } = require('../controllers/auth.controller');
+import { login, register, me, forgotPassword, resetCodeCheck, resetPassword } from '../controllers/auth.controller.js';
 
 // Importing the auth validation
-const authValidation = require('../middlewares/validations/auth.validation');
+import authValidation from '../middlewares/validations/auth.validation.js';
 
 // Token check
-const { tokenCheck } = require('../middlewares/auth');
+import { tokenCheck } from '../middlewares/auth.js';
 
 // Creating the routes
 
@@ -37,4 +38,4 @@ router.post('/reset-code-check', resetCodeCheck);
 router.post('/reset-password', resetPassword);
 
 // Exporting the routes
-module.exports = router;
+export default router;
