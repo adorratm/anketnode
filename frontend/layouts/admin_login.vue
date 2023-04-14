@@ -5,7 +5,7 @@
       <!-- Main Content -->
       <div class="hk-pg-wrapper hk-auth-wrapper">
         <BackendLoginHeader />
-        <nuxt />
+        <Nuxt />
       </div>
     </div>
   </div>
@@ -85,3 +85,14 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.5s;
+}
+.layout-enter,
+.layout-leave-to {
+  opacity: 0;
+}
+</style>

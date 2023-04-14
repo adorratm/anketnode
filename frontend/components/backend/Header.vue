@@ -8,13 +8,15 @@
         href="javascript:void(0);"
         ><i class="fa fa-bars"></i
       ></a>
-      <a class="navbar-brand" href="dashboard1.html">
+      <nuxtLink class="navbar-brand" to="/">
         <img
           class="brand-img d-inline-block"
-          src="vendor/img/logo-dark.png"
+          src="/backend/img/logo.webp"
           alt="brand"
+          width="150"
+          height="33"
         />
-      </a>
+      </nuxtLink>
       <ul class="navbar-nav hk-navbar-content">
         <li class="nav-item dropdown dropdown-notifications">
           <a

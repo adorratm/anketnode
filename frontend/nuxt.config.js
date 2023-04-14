@@ -60,12 +60,6 @@ export default {
         iso: 'tr-TR',
         file: 'tr.js'
       },
-      {
-        name: 'English',
-        code: 'en',
-        iso: 'en-US',
-        file: 'en.js'
-      },
     ],
     langDir: 'locales/',
     defaultLocale: 'tr',
@@ -105,14 +99,15 @@ export default {
         //scheme: "refresh",
         scheme: 'local',
         token: {
-          property: "user.token",
+          property: "token",
           global: true,
           required: true,
           type: "Bearer",
           maxAge: 7200
         },
         user: {
-          property: "user",
+          url: "/panel/me", method: "get",
+          property: "data",
           autoFetch: true
         },
         /*refreshToken:{
@@ -121,16 +116,16 @@ export default {
         },*/
         endpoints: {
           login: {
-            url: "/v1/panel/login", method: "post",
-            propertyName: "user.token"
+            url: "/panel/login", method: "post",
+            propertyName: "token"
           },
           /*refresh: {
             url: "/v1/panel/refresh-token", method: "post"
           },*/
           logout: false,
           user: {
-            url: "/v1/panel/current-user", method: "get",
-            propertyName: "user"
+            url: "/panel/me", method: "get",
+            propertyName: "data"
           }
         },
         autoLogout: true
@@ -154,7 +149,7 @@ export default {
         },*/
         endpoints: {
           login: {
-            url: "/v1/login", method: "post",
+            url: "/login", method: "post",
             propertyName: "user.token"
           },
           /*refresh: {
@@ -162,7 +157,7 @@ export default {
           },*/
           logout: false,
           user: {
-            url: "/v1/current-user", method: "get",
+            url: "/me", method: "get",
             propertyName: "user"
           }
         },

@@ -21,13 +21,16 @@
 
 <script>
 export default {
-  layout: "adminLogin",
-  mounted(){
+  layout: "admin_login",
+  mounted() {
     this.$nextTick(() => {
-      this.$nuxt.$loading.start()
-      $(".preloader-it").delay(500).fadeOut("slow");
-      setTimeout(() => {this.$nuxt.$loading.finish();$(".hk-wrapper").removeClass("d-none")}, 1000)
-    })
-  }
+      this.$nuxt.$loading.start();
+      setTimeout(() => {
+        $(".preloader-it").delay(500).fadeOut("slow");
+        this.$nuxt.$loading.finish();
+        $(".hk-wrapper").removeClass("d-none");
+      }, 1000);
+    });
+  },
 };
 </script>

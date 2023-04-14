@@ -12,7 +12,10 @@ const router = express.Router();
 import multer from 'multer';
 
 // Importing the auth routes
-import auth from './auth.routes.js';
+import auth from './frontend/auth.routes.js';
+
+// Importing the admin routes
+import adminAuth from './backend/auth.routes.js';
 
 // Importing the upload middleware
 import upload from '../middlewares/lib/upload.js';
@@ -30,6 +33,9 @@ import fs from 'fs';
 
 // Using the auth routes
 router.use(auth);
+
+// Using the admin routes
+router.use('/panel', adminAuth);
 
 // Creating the upload route
 router.post('/upload', async (req, res) => {

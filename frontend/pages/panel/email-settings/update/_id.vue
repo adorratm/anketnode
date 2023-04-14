@@ -13,7 +13,9 @@
                 </div>
                 <div class="card-header card-header-action">
                   <div class="flex-grow-1">
-                    <h6 class="mb-10">{{ $t("panel.emailSettings.emailSettings") }}</h6>
+                    <h6 class="mb-10">
+                      {{ $t("panel.emailSettings.emailSettings") }}
+                    </h6>
                     <p class="font-14 w-80">
                       {{ $t("panel.emailSettings.emailSettingsDesc") }}
                     </p>
@@ -41,12 +43,12 @@
 </template>
 <script>
 export default {
-  layout: "admin",
+  layout: "admin_layout",
   mounted() {
     this.$nextTick(() => {
       this.$nuxt.$loading.start();
-      $(".preloader-it").delay(500).fadeOut("slow");
       setTimeout(() => {
+        $(".preloader-it").delay(500).fadeOut("slow");
         this.$nuxt.$loading.finish();
         $(".hk-wrapper").removeClass("d-none");
       }, 500);

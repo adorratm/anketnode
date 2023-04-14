@@ -41,7 +41,7 @@
 </template>
 <script>
 export default {
-  layout: "admin",
+  layout: "admin_layout",
   data() {
     return {
       steps: [
@@ -76,8 +76,8 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.$nuxt.$loading.start();
-      $(".preloader-it").delay(500).fadeOut("slow");
       setTimeout(() => {
+        $(".preloader-it").delay(500).fadeOut("slow");
         this.$nuxt.$loading.finish();
         $(".hk-wrapper").removeClass("d-none");
       }, 500);

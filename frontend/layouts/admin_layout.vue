@@ -1,10 +1,5 @@
 <template>
   <div>
-    <!-- Preloader -->
-    <div class="preloader-it">
-      <div class="loader-pendulums"></div>
-    </div>
-    <!-- /Preloader -->
     <!-- HK Wrapper -->
     <div class="hk-wrapper hk-vertical-nav">
       <!-- Top Navbar -->
@@ -19,7 +14,7 @@
       <div class="hk-pg-wrapper">
         <!-- Container -->
         <div class="container-fluid mt-xl-50 mt-sm-30 mt-15">
-          <nuxt />
+          <Nuxt />
         </div>
         <!-- /Container -->
 
@@ -100,3 +95,14 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.5s;
+}
+.layout-enter,
+.layout-leave-to {
+  opacity: 0;
+}
+</style>

@@ -57,8 +57,8 @@
               <a
                 class="nav-link"
                 href="javascript:void(0);"
-                data-toggle="collapse"
-                data-target="#usersnav"
+                data-bs-toggle="collapse"
+                data-bs-target="#usersnav"
               >
                 <i class="fa fa-users-gear"></i>
                 <span class="nav-link-text">{{ $t("panel.userActions") }}</span>
@@ -99,8 +99,8 @@
               <a
                 class="nav-link"
                 href="javascript:void(0);"
-                data-toggle="collapse"
-                data-target="#productcategoriesnav"
+                data-bs-toggle="collapse"
+                data-bs-target="#productcategoriesnav"
               >
                 <i class="fa fa-dropbox"></i>
                 <span class="nav-link-text">{{

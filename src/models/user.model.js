@@ -45,6 +45,24 @@ const userSchema = new mongoose.Schema({
             default: null,
             trim: true
         }
+    },
+    role: {
+        type: Number,
+        required: true,
+        trim: true,
+        default: 1 // 1 = user, 2 = moderator, 3 = admin, 4 = super admin
+    },
+    status: {
+        type: Boolean,
+        required: true,
+        trim: true,
+        default: false // false = inactive, true = active 
+    },
+    verified: {
+        type: Boolean,
+        required: true,
+        trim: true,
+        default: false // false = not verified, true = verified
     }
 }, { collection: "users", timestamps: true });
 

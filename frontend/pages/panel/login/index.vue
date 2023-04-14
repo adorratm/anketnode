@@ -20,5 +20,7 @@
 <script>
 export default {
   layout: "admin_login",
+  mounted() {
+  },
 };
 </script>

@@ -2,20 +2,22 @@
   <div>
     <ValidationObserver ref="form" v-slot="{ handleSubmit, invalid }">
       <form @submit.prevent="handleSubmit(login)">
-        <h1 class="display-4 mb-10">Tekrar Hoşgeldiniz :)</h1>
-        <p class="mb-30">Bilgilerinizle Panele Giriş Yapın.</p>
+        <h1 class="display-4 mb-10">{{ $t("panel.login.welcomeAgain") }}</h1>
+        <p class="mb-30">{{ $t("panel.login.loginWithYourCredentials") }}</p>
         <div class="form-group mb-3">
           <ValidationProvider
             vid="email"
-            name="E-Mail Adresiniz"
+            :name="$t('panel.login.email')"
             rules="required|min:2|email"
             v-slot="{ errors }"
           >
-            <label for="email" class="mb-5">E-Mail Adresiniz</label>
+            <label for="email" class="mb-5">{{
+              $t("panel.login.email")
+            }}</label>
             <input
               id="email"
               class="form-control form-control-sm rounded-0"
-              placeholder="E-Mail Adresiniz"
+              :placeholder="$t('panel.login.email')"
               type="email"
               v-model="loginData.email"
               required
@@ -26,15 +28,17 @@
         <div class="form-group mb-3">
           <ValidationProvider
             vid="password"
-            name="Şifreniz"
+            :name="$t('panel.login.password')"
             rules="required|min:6"
             v-slot="{ errors }"
           >
-            <label for="password" class="mb-5">Şifreniz</label>
+            <label for="password" class="mb-5">{{
+              $t("panel.login.password")
+            }}</label>
             <input
               id="password"
               class="form-control form-control-sm rounded-0"
-              placeholder="Şifreniz"
+              :placeholder="$t('panel.login.password')"
               type="password"
               v-model="loginData.password"
               required
@@ -47,14 +51,16 @@
           type="submit"
           :disabled="invalid"
         >
-          Giriş Yap
+          {{ $t("panel.login.login") }}
         </button>
 
         <p class="font-14 text-center mt-15">
-          Oturum Açarken Problem Mi Yaşıyorsunuz?
+          {{ $t("panel.login.havingProblemsLoggingIn") }}
         </p>
         <p class="text-center">
-          <nuxt-link to="/panel/forgot-password">Şifremi Unuttum</nuxt-link>
+          <nuxt-link to="/panel/forgot-password">{{
+            $t("panel.login.forgotPassword")
+          }}</nuxt-link>
         </p>
       </form>
     </ValidationObserver>
@@ -85,21 +91,17 @@ export default {
         });
         this.$router.replace("/panel").then(() => {
           this.$toast.success(
-            data.message +
+              this.$t("panel.login.welcome") +
+              " <b>" +
+              this.$auth.user.first_name +
               " " +
-              data.user.first_name +
-              " " +
-              data.user.last_name,
+              this.$auth.user.last_name+"</b>",
             this.$t("successfully")
           );
         });
       } catch (error) {
-        console.log(error);
         if (error.response) {
-          this.$refs.form.setErrors({
-            email: [error.response.data.message],
-            password: [error.response.data.message],
-          });
+          this.$toast.error(error.response.data.message, this.$t("error"));
         }
       }
     },

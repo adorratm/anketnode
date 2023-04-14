@@ -1,5 +1,15 @@
 module.exports = {
     panel: {
+        login: {
+            welcomeAgain: "Tekrar Hoşgeldiniz :)",
+            loginWithYourCredentials: "Bilgilerinizle Panele Giriş Yapın.",
+            email: "E-Mail Adresiniz",
+            password: "Şifreniz",
+            login: "Giriş Yap",
+            havingProblemsLoggingIn :"Oturum Açarken Problem Mi Yaşıyorsunuz?",
+            forgotPassword: "Şifremi Unuttum",
+            welcome: "Hoşgeldiniz",
+        },
         menus: {
             menus: "Menüler",
             menusDesc: "Websitenizdeki Menüleri Buradan Yönetebilirsiniz.",
@@ -52,14 +62,6 @@ module.exports = {
             emailSettingsDesc: "Websitenizin E-Mail Ayarlarını Buradan Yönetebilirsiniz.",
             email: "E-Mail",
             protocol: "Protokol",
-            port: "Port",
-            host: "Host",
-            password: "Şifre"
-        },
-        codesSettings: {
-            codesSettings: "Codes Ayarları",
-            codesSettingsDesc: "Websitenizin Codes Ayarlarını Buradan Yönetebilirsiniz.",
-            email: "E-Mail",
             port: "Port",
             host: "Host",
             password: "Şifre"
