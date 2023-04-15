@@ -1,0 +1,34 @@
+{
+	"controllers": {
+		"backend": {
+			"authController": {
+				"login": {
+					"userDoesntExist": "Kullanıcı bulunamadı.",
+					"userIsNotActive": "Kullanıcı aktif değil.",
+					"unauthorizedAccess": "Yetkisiz erişim.",
+					"passwordIncorrect": "Şifreniz yanlış."
+				},
+                "register": {
+                    "userAlreadyExists": "Kullanıcı zaten mevcut.",
+                    "userCreatedSuccessfully": "Başarıyla Kayıt Oldunuz.",
+                    "anErrorOccuredWhileCreatingTheUser": "Kayıt Olurken Hata Oluştu. Lütfen Tekrar Deneyiniz."
+                }
+			}
+		},
+        "frontend": {
+            "authController": {
+                "login": {
+                    "userDoesntExist": "Kullanıcı bulunamadı.",
+                    "userIsNotActive": "Kullanıcı aktif değil.",
+                    "unauthorizedAccess": "Yetkisiz erişim.",
+                    "passwordIncorrect": "Şifreniz yanlış."
+                },
+                "register": {
+                    "userAlreadyExists": "Kullanıcı zaten mevcut.",
+                    "userCreatedSuccessfully": "Başarıyla Kayıt Oldunuz.",
+                    "anErrorOccuredWhileCreatingTheUser": "Kayıt Olurken Hata Oluştu. Lütfen Tekrar Deneyiniz."
+                }
+            }
+        }
+	}
+}

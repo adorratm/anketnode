@@ -33,11 +33,21 @@ const login = async (req, res) => {
     const { email, password } = req.body;
 
     // Checking if the user exists
-    const userCheck = await user.findOne({ email, status: 1, role: { $gt: 1, $lte: 4 }, verified: true });
-
+    const userCheck = await user.findOne({ email });
+    
     // If the user doesn't exist, throw an error
     if (!userCheck) {
-        throw new APIError("User doesn't exist.", 400);
+        throw new APIError(res.__("controllers.backend.authController.login.userDoesntExist"), 400);
+    }
+
+    // Checking if the user is active
+    if (!userCheck.status) {
+        throw new APIError(res.__("controllers.backend.authController.login.userIsNotActive"), 400);
+    }
+
+    // Checking if the user is admin
+    if (userCheck.role > 1 && userCheck.role <= 4) {
+        throw new APIError(res.__("controllers.backend.authController.login.unauthorizedAccess"), 401);
     }
 
     // Checking if the password is correct
@@ -45,7 +55,7 @@ const login = async (req, res) => {
 
     // If the password is incorrect, throw an error
     if (!passwordCheck) {
-        throw new APIError("Password is incorrect.", 400);
+        throw new APIError(res.__("controllers.backend.authController.login.passwordIncorrect"), 400);
     }
 
     // Creating the token
@@ -63,7 +73,7 @@ const register = async (req, res) => {
 
     // If the user already exists, throw an error
     if (userCheck) {
-        throw new APIError("User already exists.", 400);
+        throw new APIError(res.__("controllers.backend.authController.register.userAlreadyExists"), 400);
     }
 
     // Hashing the password
@@ -75,10 +85,10 @@ const register = async (req, res) => {
     // Saving the new user
     await newUser.save().then((data) => {
         // Returning the response
-        return new Response(data, "User created successfully.").created(res);
+        return new Response(data, res.__("controllers.backend.authController.register.userCreatedSuccessfully")).created(res);
     }).catch((err) => {
         // Returning the error
-        throw new APIError("An error occured while creating the user.", 400);
+        throw new APIError(res.__("controllers.backend.authController.register.anErrorOccuredWhileCreatingTheUser"), 400);
     });
 }
 

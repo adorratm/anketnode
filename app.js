@@ -57,7 +57,21 @@ import path from "path";
 
 const __dirname = path.dirname("/public");
 
+// i18n
+import i18n from "i18n";
+
+i18n.configure({
+    locales: ['tr'],
+    defaultLocale: "tr",
+    directory: path.join('./src/', 'locales'),
+    objectNotation:true,
+    autoReload: true,
+    updateFiles:true,
+    syncFiles:true
+});
+
 // Middlewares
+app.use(i18n.init);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors(corsOptions));
