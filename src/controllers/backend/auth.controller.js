@@ -34,7 +34,7 @@ const login = async (req, res) => {
 
     // Checking if the user exists
     const userCheck = await user.findOne({ email });
-    
+
     // If the user doesn't exist, throw an error
     if (!userCheck) {
         throw new APIError(res.__("controllers.backend.authController.login.userDoesntExist"), 400);
@@ -107,7 +107,7 @@ const forgotPassword = async (req, res) => {
 
     // If the user doesn't exist, throw an error
     if (!userCheck) {
-        throw new APIError("User doesn't exist.", 400);
+        throw new APIError(res.__("controllers.backend.authController.forgotPassword.userDoesntExist"), 400);
     }
 
     // Creating the reset code
@@ -120,15 +120,15 @@ const forgotPassword = async (req, res) => {
     await sendEmail({
         from: process.env.EMAIL_USER,
         to: userCheck.email,
-        subject: "Password Reset",
-        html: `Your password reset code is <b>${resetCode}</b>`,
+        subject: res.__("controllers.backend.authController.forgotPassword.subject"),
+        html: res.__("controllers.backend.authController.forgotPassword.body", resetCode),
     })
 
     // Updating the user
     await user.updateOne({ email }, { reset: { code: resetCode, time: resetTime } });
 
     // Returning the response
-    return new Response(true, "Password reset code sent successfully.").success(res);
+    return new Response(true, res.__("controllers.backend.authController.forgotPassword.passwordResetCodeSendSuccessfully")).success(res);
 }
 
 // Reset Code Check Method

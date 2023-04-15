@@ -12,6 +12,12 @@
                     "userAlreadyExists": "Kullanıcı zaten mevcut.",
                     "userCreatedSuccessfully": "Başarıyla Kayıt Oldunuz.",
                     "anErrorOccuredWhileCreatingTheUser": "Kayıt Olurken Hata Oluştu. Lütfen Tekrar Deneyiniz."
+                },
+                "forgotPassword":{
+                    "userDoesntExist": "Kullanıcı bulunamadı.",
+                    "subject": "Şifre Sıfırlama",
+                    "body": "Şifrenizi sıfırlamanız için girmeniz gereken kod: %s",
+                    "passwordResetCodeSendSuccessfully": "Şifre sıfırlama kodu başarıyla gönderildi."
                 }
 			}
 		},
