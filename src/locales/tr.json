@@ -1,40 +1,76 @@
 {
-	"controllers": {
-		"backend": {
-			"authController": {
-				"login": {
-					"userDoesntExist": "Kullanıcı bulunamadı.",
-					"userIsNotActive": "Kullanıcı aktif değil.",
-					"unauthorizedAccess": "Yetkisiz erişim.",
-					"passwordIncorrect": "Şifreniz yanlış."
-				},
-                "register": {
-                    "userAlreadyExists": "Kullanıcı zaten mevcut.",
-                    "userCreatedSuccessfully": "Başarıyla Kayıt Oldunuz.",
-                    "anErrorOccuredWhileCreatingTheUser": "Kayıt Olurken Hata Oluştu. Lütfen Tekrar Deneyiniz."
-                },
-                "forgotPassword":{
-                    "userDoesntExist": "Kullanıcı bulunamadı.",
-                    "subject": "Şifre Sıfırlama",
-                    "body": "Şifrenizi sıfırlamanız için girmeniz gereken kod: %s",
-                    "passwordResetCodeSendSuccessfully": "Şifre sıfırlama kodu başarıyla gönderildi."
-                }
-			}
-		},
-        "frontend": {
+    "controllers": {
+        "backend": {
             "authController": {
                 "login": {
-                    "userDoesntExist": "Kullanıcı bulunamadı.",
+                    "userDoesntExist": "Email adresine ait kayıtlı kullanıcı bulunamadı.",
                     "userIsNotActive": "Kullanıcı aktif değil.",
                     "unauthorizedAccess": "Yetkisiz erişim.",
                     "passwordIncorrect": "Şifreniz yanlış."
                 },
                 "register": {
                     "userAlreadyExists": "Kullanıcı zaten mevcut.",
-                    "userCreatedSuccessfully": "Başarıyla Kayıt Oldunuz.",
-                    "anErrorOccuredWhileCreatingTheUser": "Kayıt Olurken Hata Oluştu. Lütfen Tekrar Deneyiniz."
+                    "userCreatedSuccessfully": "Başarıyla kayıt oldunuz.",
+                    "anErrorOccuredWhileCreatingTheUser": "Kayıt olurken hata oluştu. Lütfen tekrar deneyiniz."
+                },
+                "forgotPassword": {
+                    "forgotPassword": "Şifremi unuttum",
+                    "userDoesntExist": "Email adresine ait kayıtlı kullanıcı bulunamadı.",
+                    "subject": "Şifre Sıfırlama Talebi",
+                    "body": "Şifre sıfırlama talebiniz alınmıştır. Şifrenizi sıfırlamak için kodunuz: %s",
+                    "passwordResetCodeSendSuccessfully": "Şifre sıfırlama kodunuz başarıyla gönderilmiştir.",
+                    "resetCodeCorrect": "Şifre sıfırlama kodunuz doğru.",
+                    "resetCodeIncorrect": "Şifre sıfırlama kodunuz yanlış.",
+                    "passwordResetSuccessfully": "Şifreniz başarıyla sıfırlandı.",
+                    "resetCodeExpired": "Şifre sıfırlama kodunuzun süresi dolmuştur. Lütfen tekrar deneyiniz."
+                }
+            }
+        },
+        "frontend": {
+            "authController": {
+                "login": {
+                    "userDoesntExist": "Email adresine ait kayıtlı kullanıcı bulunamadı.",
+                    "userIsNotActive": "Kullanıcı aktif değil.",
+                    "unauthorizedAccess": "Yetkisiz erişim.",
+                    "passwordIncorrect": "Şifreniz yanlış."
+                },
+                "register": {
+                    "userAlreadyExists": "Kullanıcı zaten mevcut.",
+                    "userCreatedSuccessfully": "Başarıyla kayıt oldunuz.",
+                    "anErrorOccuredWhileCreatingTheUser": "Kayıt olurken hata oluştu. Lütfen tekrar deneyiniz."
                 }
             }
         }
-	}
+    },
+    "middlewares": {
+        "backend": {
+            "auth": {
+                "createToken": {
+                    "loginSuccessfully": "Başarıyla giriş yaptınız."
+                },
+                "tokenCheck": {
+                    "noTokenProvided": "Yetkisiz erişim. Token bulunamadı.",
+                    "tokenUnauthorized": "Yetkisiz erişim. Token doğrulanamadı.",
+                    "userNotFound": "Yetkisiz erişim. Kullanıcı bulunamadı."
+                },
+                "decodedTemporaryToken": {
+                    "noTokenProvided": "Yetkisiz erişim. Token bulunamadı.",
+                    "tokenUnauthorized": "Yetkisiz erişim. Token doğrulanamadı.",
+                    "userNotFound": "Yetkisiz erişim. Kullanıcı bulunamadı."
+                }
+            }
+        },
+        "lib": {
+            "upload": {
+                "mimeTypeNotAllowed": "Yüklemeye çalıştığınız dosya türü desteklenmiyor. Desteklenen dosya türleri: %s"
+            }
+        },
+        "validations": {
+            "authValidation": {
+                "register": {
+                    
+                }
+            }
+        }
+    }
 }

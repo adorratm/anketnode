@@ -21,7 +21,7 @@ const fileFilter = (req, file, cb) => {
     // Checking the file mimetype
     if (!allowedMimeTypes.includes(file.mimetype)) {
         // Calling the callback
-        cb(new Error("This file mimetype is not supported. Supported file mimetypes are: " + allowedMimeTypes.join(',')), false);
+        cb(new Error(req.__("middlewares.lib.upload.mimeTypeNotAllowed", allowedMimeTypes.join(','))), false);
     }
 
     // Calling the callback

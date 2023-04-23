@@ -141,24 +141,24 @@ const resetCodeCheck = async (req, res) => {
 
     // If the user doesn't exist, throw an error
     if (!userCheck) {
-        throw new APIError("User doesn't exist.", 400);
+        throw new APIError(res.__("controllers.backend.authController.forgotPassword.userDoesntExist"), 400);
     }
 
     // Checking if the code is correct
     if (userCheck.reset.code !== code) {
-        throw new APIError("Code is incorrect.", 400);
+        throw new APIError(res.__("controllers.backend.authController.forgotPassword.resetCodeIncorrect"), 400);
     }
 
     // Checking if the code is expired
     if (moment(new Date()).isAfter(userCheck.reset.time)) {
-        throw new APIError("Code is expired.", 400);
+        throw new APIError(res.__("controllers.backend.authController.forgotPassword.resetCodeExpired"), 400);
     }
 
     // Creating the token
     const temporaryToken = await createTemporaryToken(userCheck._id, userCheck.email);
 
     // Returning the response
-    return new Response({ temporaryToken }, "Code is correct.").success(res);
+    return new Response({ temporaryToken }, res.__("controllers.backend.authController.forgotPassword.resetCodeCorrect")).success(res);
 }
 
 // Reset Password Method
@@ -167,7 +167,7 @@ const resetPassword = async (req, res) => {
     const { password, temporaryToken } = req.body;
 
     // Checking if the code is correct
-    const decodedToken = await decodedTemporaryToken(temporaryToken);
+    const decodedToken = await decodedTemporaryToken(temporaryToken, res);
 
     // Hashing the password
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -176,7 +176,7 @@ const resetPassword = async (req, res) => {
     await user.findByIdAndUpdate({ _id: decodedToken._id }, { password: hashedPassword, reset: { code: null, time: null } });
 
     // Returning the response
-    return new Response(decodedToken, "Password reset successfully.").success(res);
+    return new Response(decodedToken, res.__("controllers.backend.authController.forgotPassword.passwordResetSuccessfully")).success(res);
 }
 
 // Exporting the methods

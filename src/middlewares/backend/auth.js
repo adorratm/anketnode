@@ -34,7 +34,7 @@ const createToken = async (user, res) => {
     return res.status(201).send({
         success: true,
         token,
-        message: 'User logged in successfully.'
+        message: res.__("middlewares.backend.auth.createToken.loginSuccessfully")
     });
 }
 
@@ -46,14 +46,14 @@ const tokenCheck = async (req, res, next) => {
 
     // Checking if the token exists
     if (!token) {
-        throw new APIError('Access denied. No token provided.', 401);
+        throw new APIError(res.__("middlewares.backend.auth.tokenCheck.noTokenProvided"), 401);
     }
     // Checking if the token is valid
     await jwt.verify(token, process.env.JWT_SECRET_KEY, async (err, decoded) => {
 
         // If the token is invalid, throw an error
         if (err) {
-            throw new APIError('Access denied. Api token is unauthorized.', 401);
+            throw new APIError(res.__("middlewares.backend.auth.tokenCheck.tokenUnauthorized"), 401);
         }
 
         // Getting the user info
@@ -61,7 +61,7 @@ const tokenCheck = async (req, res, next) => {
 
         // Checking if the user exists
         if (!userInfo) {
-            throw new APIError('Access denied. User not found.', 401);
+            throw new APIError(res.__("middlewares.backend.auth.tokenCheck.userNotFound"), 401);
         }
 
         // Setting the user info
@@ -92,12 +92,12 @@ const createTemporaryToken = async (userId, email) => {
 }
 
 // Decoding the temporary token 
-const decodedTemporaryToken = async (temporaryToken) => {
+const decodedTemporaryToken = async (temporaryToken, res) => {
     const token = temporaryToken && temporaryToken.startsWith('Bearer ') && temporaryToken.split(' ')[1];
 
     // Checking if the token exists
     if (!token) {
-        throw new APIError('Access denied. No token provided.', 401);
+        throw new APIError(res.__("middlewares.backend.auth.decodedTemporaryToken.noTokenProvided"), 401);
     }
 
     // Checking if the token is valid
@@ -105,14 +105,14 @@ const decodedTemporaryToken = async (temporaryToken) => {
 
         // If the token is invalid, throw an error
         if (err) {
-            throw new APIError('Access denied. Api token is unauthorized.', 401);
+            throw new APIError(res.__("middlewares.backend.auth.decodedTemporaryToken.tokenUnauthorized"), 401);
         }
 
         const userInfo = await user.findById(decoded.sub).select("_id first_name last_name email");
 
         // Checking if the user exists
         if (!userInfo) {
-            throw new APIError('Access denied. User not found.', 401);
+            throw new APIError(res.__("middlewares.backend.auth.decodedTemporaryToken.userNotFound"), 401);
         }
 
         // Returning the user info
@@ -121,4 +121,4 @@ const decodedTemporaryToken = async (temporaryToken) => {
 }
 
 // Exporting the module
-export { createToken, tokenCheck, createTemporaryToken,  decodedTemporaryToken }
+export { createToken, tokenCheck, createTemporaryToken, decodedTemporaryToken }

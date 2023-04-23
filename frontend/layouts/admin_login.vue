@@ -83,6 +83,7 @@ export default {
       { src: "/backend/js/init.js", defer: true, body: true },
     ],
   },
+  middleware:['auth','unauthenticated']
 };
 </script>
 

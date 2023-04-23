@@ -52,6 +52,12 @@ const userSchema = new mongoose.Schema({
         trim: true,
         default: 1 // 1 = user, 2 = moderator, 3 = admin, 4 = super admin
     },
+    permissions: {
+        type: Object,
+        required: true,
+        trim: true,
+        default: {}
+    },
     status: {
         type: Boolean,
         required: true,

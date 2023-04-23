@@ -23,9 +23,8 @@ const apiLimiter = rateLimit({
             return 100;
         }
     }, // limit each IP to 100 requests per windowMs
-    message: {
-        success: false, // Success status
-        message: 'Too many requests, please try again later.' // Message to send
+    message: (req, res) => {
+        return res.__("middlewares.rateLimit.tooManyRequests"); // Return the message
     },
     skip: (req, res) => allowedList.includes(req.ip), // Skipping the allowed list
     standardHeaders: true, // Enable the standard rate limit headers
