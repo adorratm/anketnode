@@ -249,7 +249,7 @@ export default {
     },
     async getRoles() {
       try {
-        let { data } = await this.$axios.get("v1/panel/userroles/");
+        let { data } = await this.$axios.get("panel/userroles/");
         if (data && data.user_roles) {
           this.user_roles = data.user_roles;
         }
@@ -261,8 +261,8 @@ export default {
       try {
         const formData = this.getFormData(this.formData);
         let url = this.id
-          ? "v1/panel/users/update/" + this.id
-          : "v1/panel/users/save/";
+          ? "panel/users/update/" + this.id
+          : "panel/users/save/";
         let { data } = await this.$axios.post(url, formData, {
           headers: {
             "Content-Type":
@@ -281,7 +281,7 @@ export default {
     },
     async getUser(id) {
       try {
-        let { data } = await this.$axios.get("v1/panel/users/" + id);
+        let { data } = await this.$axios.get("panel/users/" + id);
         if (data && data.user) {
           this.formData = data.user;
           this.formData.password = null;

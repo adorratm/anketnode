@@ -32,19 +32,19 @@
                   <BackendDatatable
                     :dataurl="
                       $config.API_URL +
-                      'v1/backend/emailSettingsController/datatable'
+                      'backend/emailSettingsController/datatable'
                     "
                     :rankurl="
                       $config.API_URL +
-                      'v1/backend/emailSettingsController/rank/'
+                      'backend/emailSettingsController/rank/'
                     "
                     :isactiveurl="
                       $config.API_URL +
-                      'v1/backend/emailSettingsController/isactive/'
+                      'backend/emailSettingsController/isactive/'
                     "
                     :editurl="'/panel/email-settings/update/'"
                     :deleteurl="
-                      $config.API_URL + 'v1/panel/emailsettings/delete/'
+                      $config.API_URL + 'panel/emailsettings/delete/'
                     "
                     :token="this.$auth.strategy.token.get()"
                     :columns="columns"

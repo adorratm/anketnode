@@ -30,17 +30,17 @@
                   <BackendDatatable
                     :dataurl="
                       $config.API_URL +
-                      'v1/backend/settingsController/datatable'
+                      'backend/settingsController/datatable'
                     "
                     :rankurl="
-                      $config.API_URL + 'v1/backend/settingsController/rank/'
+                      $config.API_URL + 'backend/settingsController/rank/'
                     "
                     :isactiveurl="
                       $config.API_URL +
-                      'v1/backend/settingsController/isactive/'
+                      'backend/settingsController/isactive/'
                     "
                     :editurl="'/panel/settings/update/'"
-                    :deleteurl="$config.API_URL + 'v1/panel/settings/delete/'"
+                    :deleteurl="$config.API_URL + 'panel/settings/delete/'"
                     :token="this.$auth.strategy.token.get()"
                     :columns="columns"
                     :sort="sort"

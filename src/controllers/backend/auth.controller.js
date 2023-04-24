@@ -45,17 +45,17 @@ const login = async (req, res) => {
         throw new APIError(res.__("controllers.backend.authController.login.userIsNotActive"), 400);
     }
 
-    // Checking if the user is admin
-    if (userCheck.role > 1 && userCheck.role <= 4) {
-        throw new APIError(res.__("controllers.backend.authController.login.unauthorizedAccess"), 401);
-    }
-
     // Checking if the password is correct
     const passwordCheck = await bcrypt.compare(password, userCheck.password);
 
     // If the password is incorrect, throw an error
     if (!passwordCheck) {
         throw new APIError(res.__("controllers.backend.authController.login.passwordIncorrect"), 400);
+    }
+    
+    // Checking if the user is admin
+    if (userCheck.role <= 1) {
+        throw new APIError(res.__("controllers.backend.authController.login.unauthorizedAccess"), 401);
     }
 
     // Creating the token

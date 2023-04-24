@@ -33,17 +33,17 @@
                   <BackendDatatable
                     :dataurl="
                       $config.API_URL +
-                      'v1/backend/productsController/datatable'
+                      'backend/productsController/datatable'
                     "
                     :rankurl="
-                      $config.API_URL + 'v1/backend/productsController/rank/'
+                      $config.API_URL + 'backend/productsController/rank/'
                     "
                     :isactiveurl="
                       $config.API_URL +
-                      'v1/backend/productsController/isactive/'
+                      'backend/productsController/isactive/'
                     "
                     :editurl="'/panel/products/update/'"
-                    :deleteurl="$config.API_URL + 'v1/panel/products/delete/'"
+                    :deleteurl="$config.API_URL + 'panel/products/delete/'"
                     :token="this.$auth.strategy.token.get()"
                     :columns="columns"
                     :sort="sort"
@@ -177,7 +177,7 @@ export default {
           try {
             let { data } = await this.$axios.get(
               this.$config.API_URL +
-                "v1/backend/productsController/sync_products"
+                "backend/productsController/sync_products"
             );
             data.status
               ? this.$toast.success(data.message, this.$t("successfully"))

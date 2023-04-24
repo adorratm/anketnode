@@ -31,11 +31,11 @@
                 <div class="card-body">
                   <BackendMenusContent
                     :rankurl="
-                      $config.API_URL + 'v1/backend/menusController/rank/'
+                      $config.API_URL + 'backend/menusController/rank/'
                     "
-                    :deleteurl="$config.API_URL + 'v1/panel/menus/delete/'"
+                    :deleteurl="$config.API_URL + 'panel/menus/delete/'"
                     :isactiveurl="
-                      $config.API_URL + 'v1/backend/menusController/isactive/'
+                      $config.API_URL + 'backend/menusController/isactive/'
                     "
                   />
                 </div>

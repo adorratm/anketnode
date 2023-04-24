@@ -171,8 +171,8 @@ export default {
       try {
         const formData = this.getFormData(this.formData);
         let url = this.id
-          ? "v1/panel/settings/update/" + this.id
-          : "v1/panel/settings/save/";
+          ? "panel/settings/update/" + this.id
+          : "panel/settings/save/";
         let { data } = await this.$axios.post(url, formData, {
           headers: {
             "Content-Type":
@@ -191,7 +191,7 @@ export default {
     },
     async getSettings(id) {
       try {
-        let { data } = await this.$axios.get("v1/panel/settings/" + id);
+        let { data } = await this.$axios.get("panel/settings/" + id);
         if (data && data.settings) {
           this.formData = data.settings;
           this.formData.address_informations = JSON.parse(

@@ -21,33 +21,33 @@ class authValidation {
             // Validating the request body
             await joi.object({
                 first_name: joi.string().trim().min(2).max(70).required().messages({
-                    'string.base': `First name should be a type of 'text'`,
-                    'string.empty': `First name cannot be an empty field`,
-                    'string.min': `First name should have a minimum length of {#limit}`,
-                    'string.max': `First name should have a maximum length of {#limit}`,
-                    'string.required': `First name is a required field`
+                    'string.base': res.__("middlewares.validations.authValidation.register.firstName.base"),
+                    'string.empty': res.__("middlewares.validations.authValidation.register.firstName.empty"),
+                    'string.min': res.__("middlewares.validations.authValidation.register.firstName.min"),
+                    'string.max': res.__("middlewares.validations.authValidation.register.firstName.max"),
+                    'string.required': res.__("middlewares.validations.authValidation.register.firstName.required")
                 }),
                 last_name: joi.string().trim().min(2).max(70).required().messages({
-                    'string.base': `Last name should be a type of 'text'`,
-                    'string.empty': `Last name cannot be an empty field`,
-                    'string.min': `Last name should have a minimum length of {#limit}`,
-                    'string.max': `Last name should have a maximum length of {#limit}`,
-                    'string.required': `Last name is a required field`
+                    'string.base': res.__("middlewares.validations.authValidation.register.lastName.base"),
+                    'string.empty': res.__("middlewares.validations.authValidation.register.lastName.empty"),
+                    'string.min': res.__("middlewares.validations.authValidation.register.lastName.min"),
+                    'string.max': res.__("middlewares.validations.authValidation.register.lastName.max"),
+                    'string.required': res.__("middlewares.validations.authValidation.register.lastName.required")
                 }),
                 email: joi.string().trim().email().min(2).max(255).required().messages({
-                    'string.base': `Email should be a type of 'text'`,
-                    'string.empty': `Email cannot be an empty field`,
-                    'string.email': `Email should be a valid email`,
-                    'string.min': `Email should have a minimum length of {#limit}`,
-                    'string.max': `Email should have a maximum length of {#limit}`,
-                    'string.required': `Email is a required field`
+                    'string.base': res.__("middlewares.validations.authValidation.register.email.base"),
+                    'string.empty': res.__("middlewares.validations.authValidation.register.email.empty"),
+                    'string.email': res.__("middlewares.validations.authValidation.register.email.email"),
+                    'string.min': res.__("middlewares.validations.authValidation.register.email.min"),
+                    'string.max': res.__("middlewares.validations.authValidation.register.email.max"),
+                    'string.required': res.__("middlewares.validations.authValidation.register.email.required")
                 }),
                 password: joi.string().trim().min(6).max(32).required().messages({
-                    'string.base': `Password should be a type of 'text'`,
-                    'string.empty': `Password cannot be an empty field`,
-                    'string.min': `Password should have a minimum length of {#limit}`,
-                    'string.max': `Password should have a maximum length of {#limit}`,
-                    'string.required': `Password is a required field`
+                    'string.base': res.__("middlewares.validations.authValidation.register.password.base"),
+                    'string.empty': res.__("middlewares.validations.authValidation.register.password.empty"),
+                    'string.min': res.__("middlewares.validations.authValidation.register.password.min"),
+                    'string.max': res.__("middlewares.validations.authValidation.register.password.max"),
+                    'string.required': res.__("middlewares.validations.authValidation.register.password.required")
                 })
             }).validateAsync(req.body);
         } catch (err) {
@@ -64,19 +64,19 @@ class authValidation {
             // Validating the request body
             await joi.object({
                 email: joi.string().trim().email().min(2).max(255).required().messages({
-                    'string.base': `Email should be a type of 'text'`,
-                    'string.empty': `Email cannot be an empty field`,
-                    'string.email': `Email should be a valid email`,
-                    'string.min': `Email should have a minimum length of {#limit}`,
-                    'string.max': `Email should have a maximum length of {#limit}`,
-                    'string.required': `Email is a required field`
+                    'string.base': res.__("middlewares.validations.authValidation.login.email.base"),
+                    'string.empty': res.__("middlewares.validations.authValidation.login.email.empty"),
+                    'string.email': res.__("middlewares.validations.authValidation.login.email.email"),
+                    'string.min': res.__("middlewares.validations.authValidation.login.email.min"),
+                    'string.max': res.__("middlewares.validations.authValidation.login.email.max"),
+                    'string.required': res.__("middlewares.validations.authValidation.login.email.required")
                 }),
                 password: joi.string().trim().min(6).max(32).required().messages({
-                    'string.base': `Password should be a type of 'text'`,
-                    'string.empty': `Password cannot be an empty field`,
-                    'string.min': `Password should have a minimum length of {#limit}`,
-                    'string.max': `Password should have a maximum length of {#limit}`,
-                    'string.required': `Password is a required field`
+                    'string.base': res.__("middlewares.validations.authValidation.login.password.base"),
+                    'string.empty': res.__("middlewares.validations.authValidation.login.password.empty"),
+                    'string.min': res.__("middlewares.validations.authValidation.login.password.min"),
+                    'string.max': res.__("middlewares.validations.authValidation.login.password.max"),
+                    'string.required': res.__("middlewares.validations.authValidation.login.password.required")
                 })
             }).validateAsync(req.body);
         } catch (err) {

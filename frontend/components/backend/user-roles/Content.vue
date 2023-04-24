@@ -212,8 +212,8 @@ export default {
       try {
         const formData = new FormData(this.$refs.formv);
         let url = this.id
-          ? "v1/panel/userroles/update/" + this.id
-          : "v1/panel/userroles/save/";
+          ? "panel/userroles/update/" + this.id
+          : "panel/userroles/save/";
         let { data } = await this.$axios.post(url, formData, {
           headers: {
             "Content-Type":
@@ -232,7 +232,7 @@ export default {
     },
     async getRole(id) {
       try {
-        let { data } = await this.$axios.get("v1/panel/userroles/" + id);
+        let { data } = await this.$axios.get("panel/userroles/" + id);
         if (data) {
           this.controllers = data.controllers;
           if (this.id) {

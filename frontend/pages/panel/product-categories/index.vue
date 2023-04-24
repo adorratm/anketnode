@@ -32,14 +32,14 @@
                   <BackendProductCategoriesContent
                     :rankurl="
                       $config.API_URL +
-                      'v1/backend/productCategoriesController/rank/'
+                      'backend/productCategoriesController/rank/'
                     "
                     :deleteurl="
-                      $config.API_URL + 'v1/panel/productcategories/delete/'
+                      $config.API_URL + 'panel/productcategories/delete/'
                     "
                     :isactiveurl="
                       $config.API_URL +
-                      'v1/backend/productCategoriesController/isactive/'
+                      'backend/productCategoriesController/isactive/'
                     "
                   />
                 </div>

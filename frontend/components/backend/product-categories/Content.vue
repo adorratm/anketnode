@@ -151,7 +151,7 @@ export default {
     },
     async getProductCategories() {
       try {
-        let { data } = await this.$axios.get("v1/panel/productcategories/");
+        let { data } = await this.$axios.get("panel/productcategories/");
         if (data && data.productCategory) {
           this.product_categories = data.productCategory;
         }
@@ -163,8 +163,8 @@ export default {
       try {
         const formData = this.getFormData(this.formData);
         let url = this.id
-          ? "v1/panel/productcategories/update/" + this.id
-          : "v1/panel/productcategories/save/";
+          ? "panel/productcategories/update/" + this.id
+          : "panel/productcategories/save/";
         let { data } = await this.$axios.post(url, formData, {
           headers: {
             "Content-Type":

@@ -162,8 +162,8 @@ export default {
       try {
         const formData = this.getFormData(this.formData);
         let url = this.id
-          ? "v1/panel/products/update/" + this.id
-          : "v1/panel/products/save/";
+          ? "panel/products/update/" + this.id
+          : "panel/products/save/";
         let { data } = await this.$axios.post(url, formData, {
           headers: {
             "Content-Type":
@@ -182,7 +182,7 @@ export default {
     },
     async getProduct(id) {
       try {
-        let { data } = await this.$axios.get("v1/panel/products/" + id);
+        let { data } = await this.$axios.get("panel/products/" + id);
         if (data && data.product) {
           this.formData = data.product;
         }

@@ -68,9 +68,66 @@
         "validations": {
             "authValidation": {
                 "register": {
-                    
+                    "firstName": {
+                        "base": "Ad alanı 'metin' tipinde olmalıdır.",
+                        "empty": "Ad alanı boş bırakılamaz.",
+                        "required": "Ad alanı zorunludur.",
+                        "min": "Ad alanı en az {#limit} karakterden oluşmalıdır.",
+                        "max": "Ad alanı en fazla {#limit} karakterden oluşmalıdır."
+                    },
+                    "lastName": {
+                        "base": "Soyad alanı 'metin' tipinde olmalıdır.",
+                        "empty": "Soyad alanı boş bırakılamaz.",
+                        "required": "Soyad alanı zorunludur.",
+                        "min": "Soyad alanı en az {#limit} karakterden oluşmalıdır.",
+                        "max": "Soyad alanı en fazla {#limit} karakterden oluşmalıdır."
+                    },
+                    "email": {
+                        "base": "Email alanı 'metin' tipinde olmalıdır.",
+                        "empty": "Email alanı boş bırakılamaz.",
+                        "required": "Email alanı zorunludur.",
+                        "email": "Email alanı geçerli bir email adresi olmalıdır.",
+                        "min": "Email alanı en az {#limit} karakterden oluşmalıdır.",
+                        "max": "Email alanı en fazla {#limit} karakterden oluşmalıdır."
+                    },
+                    "password": {
+                        "base": "Şifre alanı 'metin' tipinde olmalıdır.",
+                        "empty": "Şifre alanı boş bırakılamaz.",
+                        "required": "Şifre alanı zorunludur.",
+                        "min": "Şifre alanı en az {#limit} karakterden oluşmalıdır.",
+                        "max": "Şifre alanı en fazla {#limit} karakterden oluşmalıdır."
+                    }
+                },
+                "login": {
+                    "email": {
+                        "base": "Email alanı 'metin' tipinde olmalıdır.",
+                        "empty": "Email alanı boş bırakılamaz.",
+                        "required": "Email alanı zorunludur.",
+                        "email": "Email alanı geçerli bir email adresi olmalıdır.",
+                        "min": "Email alanı en az {#limit} karakterden oluşmalıdır.",
+                        "max": "Email alanı en fazla {#limit} karakterden oluşmalıdır."
+                    },
+                    "password": {
+                        "base": "Şifre alanı 'metin' tipinde olmalıdır.",
+                        "empty": "Şifre alanı boş bırakılamaz.",
+                        "required": "Şifre alanı zorunludur.",
+                        "min": "Şifre alanı en az {#limit} karakterden oluşmalıdır.",
+                        "max": "Şifre alanı en fazla {#limit} karakterden oluşmalıdır."
+                    }
                 }
             }
+        }
+    },
+    "utils":{
+        "response":{
+            "success": "Başarılı.",
+            "created": "Başarıyla oluşturuldu.",
+            "error400": "Hatalı istek.",
+            "error401": "Yetkisiz erişim.",
+            "error403": "Kaynağa yetkisiz erişim isteğinde bulunuldu ya da işleme izin verilmiyor.",
+            "error404": "Sayfa bulunamadı.",
+            "error429": "Çok fazla istek gönderildi.",
+            "error500": "İç Sunucu hatası."
         }
     }
 }

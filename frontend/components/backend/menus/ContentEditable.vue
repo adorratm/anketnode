@@ -171,8 +171,8 @@ export default {
       try {
         const formData = this.getFormData(this.formData);
         let url = this.id
-          ? "v1/panel/menus/update/" + this.id
-          : "v1/panel/menus/save/";
+          ? "panel/menus/update/" + this.id
+          : "panel/menus/save/";
         let { data } = await this.$axios.post(url, formData, {
           headers: {
             "Content-Type":
@@ -191,7 +191,7 @@ export default {
     },
     async getMenu(id) {
       try {
-        let { data } = await this.$axios.get("v1/panel/menus/" + id);
+        let { data } = await this.$axios.get("panel/menus/" + id);
         if (data && data.menu) {
           this.formData = data.menu;
         }

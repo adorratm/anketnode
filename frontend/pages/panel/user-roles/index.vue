@@ -31,16 +31,16 @@
                 <div class="card-body">
                   <BackendDatatable
                     :dataurl="
-                      $config.API_URL + 'v1/backend/userRolesController/datatable'
+                      $config.API_URL + 'backend/userRolesController/datatable'
                     "
                     :rankurl="
-                      $config.API_URL + 'v1/backend/userRolesController/rank/'
+                      $config.API_URL + 'backend/userRolesController/rank/'
                     "
                     :isactiveurl="
-                      $config.API_URL + 'v1/backend/userRolesController/isactive/'
+                      $config.API_URL + 'backend/userRolesController/isactive/'
                     "
                     :editurl="'/panel/user-roles/update/'"
-                    :deleteurl="$config.API_URL + 'v1/panel/userroles/delete/'"
+                    :deleteurl="$config.API_URL + 'panel/userroles/delete/'"
                     :token="this.$auth.strategy.token.get()"
                     :columns="columns"
                     :sort="sort"

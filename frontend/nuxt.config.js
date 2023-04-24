@@ -120,7 +120,7 @@ export default {
             propertyName: "token"
           },
           /*refresh: {
-            url: "/v1/panel/refresh-token", method: "post"
+            url: "/panel/refresh-token", method: "post"
           },*/
           logout: false,
           user: {
@@ -153,7 +153,7 @@ export default {
             propertyName: "user.token"
           },
           /*refresh: {
-            url: "/v1/refresh-token", method: "post"
+            url: "/refresh-token", method: "post"
           },*/
           logout: false,
           user: {
