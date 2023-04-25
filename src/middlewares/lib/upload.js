@@ -33,7 +33,7 @@ const storage = multer.diskStorage({
     // Setting the destination
     destination: (req, file, cb) => {
         // Getting the root directory
-        const rootDir = path.dirname(require.main.filename);
+        const rootDir = path.dirname("./");
 
         // Creating the uploads directory
         fs.mkdirSync(path.join(rootDir, '/public/uploads'), { recursive: true });

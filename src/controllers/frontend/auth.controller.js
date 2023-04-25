@@ -41,7 +41,7 @@ const login = async (req, res) => {
     }
 
     // Checking if the user is active
-    if(!userCheck.status) {
+    if(!userCheck.is_active) {
         throw new APIError("Your account is not active.", 400);
     }
 

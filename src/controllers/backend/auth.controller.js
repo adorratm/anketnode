@@ -41,7 +41,7 @@ const login = async (req, res) => {
     }
 
     // Checking if the user is active
-    if (!userCheck.status) {
+    if (!userCheck.is_active) {
         throw new APIError(res.__("controllers.backend.authController.login.userIsNotActive"), 400);
     }
 
@@ -51,11 +51,6 @@ const login = async (req, res) => {
     // If the password is incorrect, throw an error
     if (!passwordCheck) {
         throw new APIError(res.__("controllers.backend.authController.login.passwordIncorrect"), 400);
-    }
-    
-    // Checking if the user is admin
-    if (userCheck.role <= 1) {
-        throw new APIError(res.__("controllers.backend.authController.login.unauthorizedAccess"), 401);
     }
 
     // Creating the token

@@ -12,10 +12,10 @@ const router = express.Router();
 import multer from 'multer';
 
 // Importing the auth routes
-import auth from './frontend/auth.routes.js';
+import auth from './frontend/auth.js';
 
 // Importing the admin routes
-import adminAuth from './backend/auth.routes.js';
+import adminAuth from './backend/auth.js';
 
 // Importing the upload middleware
 import upload from '../middlewares/lib/upload.js';

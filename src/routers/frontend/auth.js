@@ -1,5 +1,5 @@
 /**
- * @file auth.routes.js
+ * @file auth.js
  * @description This file is responsible for the auth routes.
  * @author https://github.com/adorratm
  */
@@ -9,7 +9,7 @@ import express from 'express';
 const router = express.Router();
 
 // Importing the auth controller
-import { login, register, me, forgotPassword, resetCodeCheck, resetPassword } from '../../controllers/backend/auth.controller.js';
+import { login, register, me, forgotPassword, resetCodeCheck, resetPassword } from '../../controllers/frontend/auth.controller.js';
 
 // Importing the auth validation
 import authValidation from '../../middlewares/validations/auth.validation.js';

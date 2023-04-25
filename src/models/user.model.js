@@ -7,8 +7,8 @@
 // Importing the mongoose
 import mongoose from "mongoose";
 
-// Creating the user schema
-const userSchema = new mongoose.Schema({
+// Creating the schema
+const schema = new mongoose.Schema({
     first_name: {
         type: String,
         required: true,
@@ -29,6 +29,10 @@ const userSchema = new mongoose.Schema({
         unique: true,
         trim: true
     },
+    phone: {
+        type: String,
+        trim: true
+    },
     password: {
         type: String,
         required: true,
@@ -46,19 +50,7 @@ const userSchema = new mongoose.Schema({
             trim: true
         }
     },
-    role: {
-        type: Number,
-        required: true,
-        trim: true,
-        default: 1 // 1 = user, 2 = moderator, 3 = admin, 4 = super admin
-    },
-    permissions: {
-        type: Object,
-        required: true,
-        trim: true,
-        default: {}
-    },
-    status: {
+    is_active: {
         type: Boolean,
         required: true,
         trim: true,
@@ -72,8 +64,8 @@ const userSchema = new mongoose.Schema({
     }
 }, { collection: "users", timestamps: true });
 
-// Creating the user model
-const user = mongoose.model("users", userSchema);
+// Creating the model
+const user = mongoose.model("users", schema);
 
 // Exporting the model
 export default user;
