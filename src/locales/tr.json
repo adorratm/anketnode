@@ -25,21 +25,6 @@
                     "resetCodeExpired": "Şifre sıfırlama kodunuzun süresi dolmuştur. Lütfen tekrar deneyiniz."
                 }
             }
-        },
-        "frontend": {
-            "authController": {
-                "login": {
-                    "userDoesntExist": "Email adresine ait kayıtlı kullanıcı bulunamadı.",
-                    "userIsNotActive": "Kullanıcı aktif değil.",
-                    "unauthorizedAccess": "Yetkisiz erişim.",
-                    "passwordIncorrect": "Şifreniz yanlış."
-                },
-                "register": {
-                    "userAlreadyExists": "Kullanıcı zaten mevcut.",
-                    "userCreatedSuccessfully": "Başarıyla kayıt oldunuz.",
-                    "anErrorOccuredWhileCreatingTheUser": "Kayıt olurken hata oluştu. Lütfen tekrar deneyiniz."
-                }
-            }
         }
     },
     "middlewares": {

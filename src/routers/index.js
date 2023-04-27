@@ -11,9 +11,6 @@ const router = express.Router();
 // Importing the multer
 import multer from 'multer';
 
-// Importing the auth routes
-import auth from './frontend/auth.js';
-
 // Importing the admin routes
 import adminAuth from './backend/auth.js';
 

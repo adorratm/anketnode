@@ -15,7 +15,7 @@ import { login, register, me, forgotPassword, resetCodeCheck, resetPassword } fr
 import authValidation from '../../middlewares/validations/auth.validation.js';
 
 // Token check
-import { tokenCheck } from '../../middlewares/frontend/auth.js';
+import { tokenCheck } from '../../middlewares/backend/auth.js';
 
 // Creating the routes
 
